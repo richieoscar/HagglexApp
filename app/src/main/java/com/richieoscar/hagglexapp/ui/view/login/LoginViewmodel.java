@@ -8,7 +8,7 @@ import com.richieoscar.hagglexapp.LoginUserMutation;
 import com.richieoscar.hagglexapp.repository.HaggleRepo;
 
 public class LoginViewmodel extends ViewModel {
-    HaggleRepo haggleRepo = new HaggleRepo();
+    HaggleRepo haggleRepo = HaggleRepo.getInstance();
 
    public ApolloMutationCall<LoginUserMutation.Data> loginUser(String email, String password){
        return haggleRepo.loginUser(email, password);
