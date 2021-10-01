@@ -3,11 +3,9 @@ package com.richieoscar.hagglexapp.ui.view.login;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -77,10 +75,12 @@ public class LoginFragment extends Fragment {
                 public void onResponse(@NonNull Response<LoginUserMutation.Data> response) {
                     if(!response.hasErrors() && (response.getData() != null)) {
                         naviagteToDashBoard();
+                        System.out.println(response.getData().toString());
                         hideProgressbar();
                     }
                     else {
                         if(response.hasErrors()){
+                            System.out.println(response.getData());
                             hideProgressbar();
                             displayErrorMessage();
                         }

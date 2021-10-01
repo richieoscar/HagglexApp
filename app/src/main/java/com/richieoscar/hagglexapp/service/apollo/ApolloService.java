@@ -6,7 +6,7 @@ public class ApolloService {
    static final String BASE_ENDPOINT ="https://api-staging.hagglex.com/graphql";
    public static ApolloClient getClient(){
        ApolloClient client = ApolloClient.builder()
-               .serverUrl("https://api-staging.hagglex.com")
+               .serverUrl(BASE_ENDPOINT)
                .build();
        return client;
 
